@@ -5,7 +5,9 @@ function SearchBar() {
         <form>
             <label>
                 <input type="text" name="search" />
-                <button type="submit">위치 검색</button>
+                <button type="submit">
+                    <img src={`${process.env.PUBLIC_URL}/search.ico`} alt="search" />
+                </button>
             </label>
         </form>
     );
