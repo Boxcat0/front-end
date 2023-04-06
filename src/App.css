@@ -69,8 +69,8 @@ form {
 
 label
 {
-  margin-right: 0.5rem;
-  border: 2px solid pink;
+  margin-right: 1rem;
+  border: 5px solid pink;
 }
 
 input[type="text"] {
