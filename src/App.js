@@ -6,6 +6,8 @@ import SearchBar from './components/SearchBar';
 import LoginButton from './components/LoginButton';
 import LoginPage from './components/LoginPage';
 import './App.css';
+import MapButton from "./components/MapButton";
+import Map from "./components/Map";
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -14,7 +16,8 @@ function App() {
             <div>
                 <Navbar onClick={() => setShowLogin(!showLogin)} />
                 <div className={`login-menu ${showLogin ? 'show-login-menu' : ''}`}>
-                    <LoginButton />
+                    <LoginButton/>
+                    <MapButton/>
                 </div>
                 <div className="title-Center">
                     <Title />
@@ -22,6 +25,7 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<SearchBar />} />
                     <Route exac path="/login" element={<LoginPage />} />
+                    <Route exac path="/Map" element={<Map />} />
                 </Routes>
             </div>
         </BrowserRouter>
