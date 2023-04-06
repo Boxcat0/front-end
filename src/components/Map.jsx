@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import "./map.css"
+import "./css/map.css"
 function Map(){
     useEffect(() => {
         // 카카오 지도 API 스크립트가 로딩된 이후에 실행됩니다.

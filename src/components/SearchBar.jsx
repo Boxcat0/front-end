@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/ico.css";
 
 function SearchBar() {
     return (
@@ -6,7 +7,9 @@ function SearchBar() {
             <label>
                 <input type="text" name="search" />
                 <button type="submit">
-                    <img src={`${process.env.PUBLIC_URL}/search.ico`} alt="search" />
+                    <div className= "icon">
+                        <img src={`${process.env.PUBLIC_URL}/search.ico`} alt="search" />
+                    </div>
                 </button>
             </label>
         </form>
