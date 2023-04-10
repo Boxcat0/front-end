@@ -49,7 +49,7 @@ nav {
 .show-login-menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /*align-items: center;*/
   position: sticky;
   top: 4rem;
   right: 0;
