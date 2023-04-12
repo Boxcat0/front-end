@@ -3,3 +3,9 @@
     background-color: var(--clr-white);
     color: var(--dark-shadow);
 }
+
+.youtube_menu{
+    display: flex;
+    justify-content: center;
+    margin-left: -700px;
+}

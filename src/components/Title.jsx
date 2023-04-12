@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function Title() {
     return (
         <Link to="/">
-            <h1>어디가GYM</h1>
+            <h1>근육 커GYM</h1>
         </Link>
     );
 }

@@ -1,12 +1,15 @@
 import React from "react";
-import searchBar from "./SearchBar"
-import youtube from "./YoutubeSlider"
+import SearchBar from "./SearchBar"
+import Youtube from "./YoutubeSlider"
+import './css/youtube_button.css'
 
 function main(){
     return(
         <div>
-            <searchBar />
-            <youtube />
+            <SearchBar />
+            <div className="youtube_menu">
+                <Youtube />
+            </div>
         </div>
     )
 
