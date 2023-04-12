@@ -1,0 +1,5 @@
+.youtube_button{
+    border: 3px solid pink;
+    background-color: var(--clr-white);
+    color: var(--dark-shadow);
+}

@@ -1,0 +1,10 @@
+.location_parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.location_my{
+    border: 3px solid pink;
+    background-color: var(--clr-white);
+    color: var(--dark-shadow);
+}
