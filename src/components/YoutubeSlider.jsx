@@ -8,12 +8,13 @@ const API_KEY = 'AIzaSyBxiS3Y3Lp_I_HIy0MaEB6cc8GHyvGdAus';
 function YoutubeSlider() {
     const [videos, setVideos] = useState([]);
     const [index, setIndex] = useState(0);
+    const [playing, setPlaying] = useState(true);
 
     useEffect(() => {
         const fetchVideos = async () => {
             try {
                 const res = await axios.get(
-                    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=김계란&key=${API_KEY}`
+                    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&channelId=UCdtRAcd3L_UpV4tMXCw63NQ&q=서브웨이,라면,햄버거&key=${API_KEY}`
                 );
                 const items = res.data.items;
                 const videoIds = items.map((item) => item.id.videoId);
@@ -40,16 +41,26 @@ function YoutubeSlider() {
     }, [index, videos]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            nextVideo();
-        }, 7000);
+        let interval;
+        if (playing) {
+            interval = setInterval(() => {
+                nextVideo();
+            }, 3000);
+        }
         return () => clearInterval(interval);
-    }, [nextVideo]);
+    }, [playing, nextVideo]);
+
+    const togglePlaying = useCallback(() => {
+        setPlaying(!playing);
+    }, [playing]);
 
     return (
         <div>
             <button onClick={prevVideo} className="youtube_button">Previous</button>
             <button onClick={nextVideo} className="youtube_button">Next</button>
+            <button onClick={togglePlaying} className="youtube_button">
+                {playing ? 'Pause' : 'Play'}
+            </button>
             <div style={{ position: 'relative', height: '0', paddingBottom: '56.25%' }}>
                 {transitions((style, i) => (
                     <animated.iframe
@@ -59,8 +70,8 @@ function YoutubeSlider() {
                             position: 'absolute',
                             top: 0,
                             left: 0,
-                            height: '500%',
-                            width: '500%',
+                            height: '400%',
+                            width: '400%',
                         }}
                         src={`https://www.youtube.com/embed/${videos[i]}`}
                         frameBorder="0"

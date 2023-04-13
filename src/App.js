@@ -16,7 +16,9 @@ function App() {
             <div>
                 <Navbar onClick={() => setShowLogin(!showLogin)} />
                 <div className={`login-menu ${showLogin ? 'show-login-menu' : ''}`}>
-                    <SearchBar/>
+                    <div className="searchBar_menu">
+                        <SearchBar/>
+                    </div>
                     <MenuButton/>
                 </div>
                 <div className="title-Center">
