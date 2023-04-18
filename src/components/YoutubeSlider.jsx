@@ -3,7 +3,7 @@ import { useTransition, animated } from 'react-spring';
 import axios from 'axios';
 import "./css/youtube_button.css"
 
-const API_KEY = 'AIzaSyBxiS3Y3Lp_I_HIy0MaEB6cc8GHyvGdAus';
+const API_KEY = 'AIzaSyC6WrX3hjBvtPWMZgT5SSz_m9vwxsVDER0';
 
 function YoutubeSlider() {
     const [videos, setVideos] = useState([]);
@@ -20,17 +20,18 @@ function YoutubeSlider() {
                 const videoIds = items.map((item) => item.id.videoId);
                 setVideos(videoIds);
             } catch (err) {
-                console.error(err);
+                console.error('Error fetching videos:', err.message);
             }
         };
         fetchVideos();
     }, []);
 
-    const transitions = useTransition(index, {
+    const transitions = useTransition(videos.length ? index : null, {
         from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
         enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
     });
+
 
     const nextVideo = useCallback(() => {
         setIndex((index + 1) % videos.length);
@@ -45,7 +46,7 @@ function YoutubeSlider() {
         if (playing) {
             interval = setInterval(() => {
                 nextVideo();
-            }, 3000);
+            }, 7000);
         }
         return () => clearInterval(interval);
     }, [playing, nextVideo]);
@@ -64,7 +65,7 @@ function YoutubeSlider() {
             <div style={{ position: 'relative', height: '0', paddingBottom: '56.25%' }}>
                 {transitions((style, i) => (
                     <animated.iframe
-                        key={i}
+                        key={videos[i]}
                         style={{
                             ...style,
                             position: 'absolute',

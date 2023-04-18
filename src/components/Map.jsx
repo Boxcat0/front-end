@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import "./css/map.css";
+import "./menuButton"
 
-function Map({ latitude = 35.1167, longitude = 128.9685 }) {
+function Map({latitude = 35.1167, longitude = 128.9685}) {
+
     useEffect(() => {
         // 카카오 지도 API 스크립트가 로딩된 이후에 실행됩니다.
         // 여기에서 지도를 생성하고 조작하는 코드를 작성합니다.

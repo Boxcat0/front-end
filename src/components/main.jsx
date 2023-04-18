@@ -8,7 +8,7 @@ function main(){
         <div>
             <SearchBar />
             <div className="youtube_menu">
-                <Youtube />
+                <Youtube/>
             </div>
         </div>
     )
