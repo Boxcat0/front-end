@@ -10,9 +10,14 @@ function MenuButton() {
     const handleLogout = () => {
         sessionStorage.setItem("isLoggedIn", "false");
         setIsLoggedIn(false);
+        sessionStorage.clear();
         window.location.reload();
         history("/");
     };
+    const mapSetting =() =>{
+        sessionStorage.setItem("latitude","35.1167");
+        sessionStorage.setItem("longitude","128.9685");
+    }
 
     return (
         <div>
@@ -24,21 +29,13 @@ function MenuButton() {
                         </button>
                     </div>
                     <div className ="my_info">
-                        <Link to="/info">
+                        <Link to="/myInfo">
                             <button className ="location_my">내 정보</button>
                         </Link>
                     </div>
                     <div className="location">
-                        <Link
-                            to={{
-                                pathname: "/map",
-                                state: {
-                                    latitude: 35.1167,
-                                    longitude: 128.9685,
-                                },
-                            }}
-                        >
-                            <button className="location_my">내 위치</button>
+                        <Link to ="/map">
+                            <button className="location_my" onClick={mapSetting}>내 위치</button>
                         </Link>
                     </div>
                 </div>

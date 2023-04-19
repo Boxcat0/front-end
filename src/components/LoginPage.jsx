@@ -6,16 +6,15 @@ import "./css/locationbutton.css"
 function LoginPage() {
     const history = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(sessionStorage.getItem("isLoggedIn") === "true");
-
     useEffect(() => {
         const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
         setIsLoggedIn(isLoggedIn);
     }, []);
-
     const onSubmit = (event) => {
         event.preventDefault();
         const username = event.target.username.value;
         const password = event.target.password.value;
+        sessionStorage.setItem("ID",username);
         if (username === "admin" && password === "1234") {
             sessionStorage.setItem("isLoggedIn", "true");
             setIsLoggedIn(true);

@@ -1,9 +1,15 @@
 import React, { useEffect} from "react";
 import "./css/map.css";
-import "./menuButton"
+import "./menuButton";
 
-function Map({latitude = 35.1167, longitude = 128.9685}) {
-
+function Map() {
+    let latitude = parseFloat(sessionStorage.getItem("latitude"));
+    let longitude = parseFloat(sessionStorage.getItem("longitude"));
+    if(latitude == null || longitude == null)//디폴트값 설정
+    {
+        latitude = 35.1167;
+        longitude = 128.9685;
+    }
     useEffect(() => {
         // 카카오 지도 API 스크립트가 로딩된 이후에 실행됩니다.
         // 여기에서 지도를 생성하고 조작하는 코드를 작성합니다.
@@ -20,6 +26,7 @@ function Map({latitude = 35.1167, longitude = 128.9685}) {
         });
         marker.setMap(map); // 마커 지도에 표시
     }, [latitude, longitude]);
+
 
     return (
         <div className="kakaoMap">

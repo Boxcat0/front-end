@@ -8,7 +8,6 @@ function main(){
         <div>
             <SearchBar />
             <div className="youtube_menu">
-                <Youtube/>
             </div>
         </div>
     )

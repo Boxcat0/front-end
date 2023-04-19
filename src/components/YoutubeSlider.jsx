@@ -46,7 +46,7 @@ function YoutubeSlider() {
         if (playing) {
             interval = setInterval(() => {
                 nextVideo();
-            }, 7000);
+            }, 10000);
         }
         return () => clearInterval(interval);
     }, [playing, nextVideo]);
