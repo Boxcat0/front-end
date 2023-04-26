@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import "./css/locationbutton.css"
+import "./css/locationbutton.css";
+import "./CreateInfo";
 
 function LoginPage() {
     const history = useNavigate();
@@ -45,7 +46,7 @@ function LoginPage() {
                         </label>
                     </div>
                     <button type="submit">로그인</button>
-                    <Link to="/make_ID">
+                    <Link to="/CreateInfo">
                         <button>회원가입</button>
                     </Link>
                 </form>

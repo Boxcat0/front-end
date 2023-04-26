@@ -1,0 +1,8 @@
+.CreateForm{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    border : 3px solid skyblue;
+    margin-left: 600px;
+    width : 700px;
+}

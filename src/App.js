@@ -8,7 +8,7 @@ import './App.css';
 import Map from "./components/Map";
 import Main from "./components/main";
 import SearchBar from "./components/SearchBar";
-import myInfo from "./components/myInfo";
+import CreateInfo from "./components/CreateInfo";
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -26,10 +26,10 @@ function App() {
                     <Title />
                 </div>
                 <Routes>
-                    <Route exact path="/myInfo" element={<myInfo />}/>
                     <Route exact path="/" element={<Main />} />
                     <Route exact path="/login" element={<LoginPage />} />
                     <Route exact path="/Map" element={<Map />} />
+                    <Route exact path="/CreateInfo" element={<CreateInfo />}/>
                 </Routes>
             </div>
         </BrowserRouter>

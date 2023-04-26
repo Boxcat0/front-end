@@ -2,11 +2,14 @@ import React from "react";
 import "./css/ico.css";
 
 function SearchBar() {
+    function SearchResult(){
+
+    }
     return (
         <form>
             <label>
                 <input type="text" name="search" placeholder="어디서 근육 커질래?"/>
-                <button type="submit">
+                <button type="submit" onSubmit={SearchResult}>
                     <div className= "icon">
                         <img src={`${process.env.PUBLIC_URL}/search.ico`} alt="search" />
                     </div>
