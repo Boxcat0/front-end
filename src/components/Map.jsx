@@ -5,6 +5,8 @@ import "./menuButton";
 function Map() {
     let latitude = parseFloat(sessionStorage.getItem("latitude"));
     let longitude = parseFloat(sessionStorage.getItem("longitude"));
+    console.log(latitude);
+    console.log(longitude);
     if(latitude == null || longitude == null)//디폴트값 설정
     {
         latitude = 35.1167;
