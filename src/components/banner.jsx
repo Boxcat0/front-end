@@ -3,10 +3,7 @@ import { useTransition, animated } from 'react-spring';
 
 const images = [
     '시판1.png',
-    'https://via.placeholder.com/400x300/6c757d/ffffff',
-    'https://via.placeholder.com/400x300/28a745/ffffff',
-    'https://via.placeholder.com/400x300/ffc107/000000',
-    'https://via.placeholder.com/400x300/dc3545/ffffff',
+    '시판2.png'
 ];
 
 function SlideShow() {
