@@ -8,11 +8,11 @@ function main(){
     return(
         <div>
             <SearchBar />
+            <div className="Banner_menu">
+                <Banner/>
+            </div>
             <div className="youtube_menu">
                 <Youtube/>
-            </div>
-            <div>
-                <Banner/>
             </div>
         </div>
     )
