@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 
 const images = [
-    'https://via.placeholder.com/400x300/007bff/ffffff',
+    '시판1.png',
     'https://via.placeholder.com/400x300/6c757d/ffffff',
     'https://via.placeholder.com/400x300/28a745/ffffff',
     'https://via.placeholder.com/400x300/ffc107/000000',
@@ -40,7 +40,7 @@ function SlideShow() {
                             position: 'absolute',
                             top: 0,
                             left: 0,
-                            height: '250px',
+                            height: '200px',
                             width: '85%',
                         }}
                         src={images[i]}
